@@ -38,7 +38,7 @@ format:
 
 - Interested in monitoring an aircraft wing, but only have access to data where we have sensors
 
-- Sensors == cost 
+- Sensors = cost 
 
 ::: {layout-ncol=2}
 
@@ -49,9 +49,9 @@ format:
 :::
 
 
-## Why do we care?
+## Virtual sensing
 
-- Interested in monitoring an aircraft wing, but can only get data where we have sensors
+- Interested in monitoring an aircraft wing, but only have access to data where we have sensors
 
 - Sensors = cost 
 
@@ -60,7 +60,7 @@ format:
 ![](figs/aircraft%20wing/wing.png)
 
 
-## Why do we care?
+## Virtual sensing
 
 - Interested in monitoring an aircraft wing, but can only get data where we have sensors
 
@@ -70,15 +70,14 @@ format:
 
 ![](figs/aircraft%20wing/wing-vs.png)
 
-## Why do we care?
+## Virtual sensing of different phenomena
 
 - We can extend virtual sensing to using one type of measurement to predict another
 
 - e.g predicting a wind turbine's power output from measured wind speed 
 
 
-
-## Why do we care?
+## Virtual sensing of different phenomena
 
 :::: {.columns}
 
@@ -89,10 +88,49 @@ format:
 :::
 
 ::: {.column width="60%"}
-![](figs/power-curve.png)
+![](figs/powerCurve.png)
 :::
 
 ::::
+
+## Many other reasons
+
+- Surrogate modelling
+
+- Dealing with complex behaviours
+
+## title
+
+- All revolve around learning a map from $X \rightarrow \mathbf{y}$
+
+- In machine learning & statistics, we call this a regression problem
+
+
+
+## title
+
+- All revolve around learning a map from $X \rightarrow \mathbf{y}$
+
+- In machine learning & statistics, we call this a regression problem
+
+- We can use Gaussian process (regression) to learn this map!
+
+- Boils down to fitting curves (functions) through data
+
+- **First Gaussian process definition; a tool for fitting curves through data**
+
+## title
+
+- generate toy data 
+
+
+
+
+
+
+## equations
+
+$5x = \frac{2}{5}$ 
 
 
 

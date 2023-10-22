@@ -357,7 +357,7 @@
 <h2>Why do we care?</h2>
 <ul>
 <li><p>Interested in monitoring an aircraft wing, but only have access to data where we have sensors</p></li>
-<li><p>Sensors == cost</p></li>
+<li><p>Sensors = cost</p></li>
 </ul>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -370,17 +370,17 @@
 </div>
 </div>
 </section>
-<section id="why-do-we-care-1" class="slide level2">
-<h2>Why do we care?</h2>
+<section id="virtual-sensing" class="slide level2">
+<h2>Virtual sensing</h2>
 <ul>
-<li><p>Interested in monitoring an aircraft wing, but can only get data where we have sensors</p></li>
+<li><p>Interested in monitoring an aircraft wing, but only have access to data where we have sensors</p></li>
 <li><p>Sensors = cost</p></li>
 <li><p>Use a Gaussian process to act as a “virtual sensor”</p></li>
 </ul>
 
 <img data-src="figs/aircraft%20wing/wing.png" class="r-stretch"></section>
-<section id="why-do-we-care-2" class="slide level2">
-<h2>Why do we care?</h2>
+<section id="virtual-sensing-1" class="slide level2">
+<h2>Virtual sensing</h2>
 <ul>
 <li><p>Interested in monitoring an aircraft wing, but can only get data where we have sensors</p></li>
 <li><p>Sensors = cost</p></li>
@@ -388,15 +388,15 @@
 </ul>
 
 <img data-src="figs/aircraft%20wing/wing-vs.png" class="r-stretch"></section>
-<section id="why-do-we-care-3" class="slide level2">
-<h2>Why do we care?</h2>
+<section id="virtual-sensing-of-different-phenomena" class="slide level2">
+<h2>Virtual sensing of different phenomena</h2>
 <ul>
 <li><p>We can extend virtual sensing to using one type of measurement to predict another</p></li>
 <li><p>e.g predicting a wind turbine’s power output from measured wind speed</p></li>
 </ul>
 </section>
-<section id="why-do-we-care-4" class="slide level2">
-<h2>Why do we care?</h2>
+<section id="virtual-sensing-of-different-phenomena-1" class="slide level2">
+<h2>Virtual sensing of different phenomena</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
 <ul>
@@ -404,9 +404,37 @@
 <li><p>e.g predicting a wind turbine’s power output from measured wind speed</p></li>
 </ul>
 </div><div class="column" style="width:60%;">
-<p><img data-src="figs/power-curve.png"></p>
+<p><img data-src="figs/powerCurve.png"></p>
 </div>
 </div>
+</section>
+<section id="many-other-reasons" class="slide level2">
+<h2>Many other reasons</h2>
+<ul>
+<li><p>Surrogate modelling</p></li>
+<li><p>Dealing with complex behaviours</p></li>
+</ul>
+</section>
+<section id="title" class="slide level2">
+<h2>title</h2>
+<ul>
+<li><p>All revolve around learning a map from <span class="math inline">\(X \rightarrow \mathbf{y}\)</span></p></li>
+<li><p>In machine learning &amp; statistics, we call this a regression problem</p></li>
+</ul>
+</section>
+<section id="title-1" class="slide level2">
+<h2>title</h2>
+<ul>
+<li><p>All revolve around learning a map from <span class="math inline">\(X \rightarrow \mathbf{y}\)</span></p></li>
+<li><p>In machine learning &amp; statistics, we call this a regression problem</p></li>
+<li><p>We can use Gaussian process (regression) to learn this map!</p></li>
+<li><p>Boils down to fitting curves (functions) through data</p></li>
+<li><p><strong>First Gaussian process definition; a tool for fitting curves through data</strong></p></li>
+</ul>
+</section>
+<section id="equations" class="slide level2">
+<h2>equations</h2>
+<p><span class="math inline">\(5x = \frac{2}{5}\)</span></p>
 <div class="footer footer-default">
 <p>&lt;Matthew Jones, Dynamics Research Group&gt;</p>
 </div>

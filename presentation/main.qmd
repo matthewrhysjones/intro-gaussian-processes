@@ -1,0 +1,98 @@
+---
+title: "My first Gaussian process"
+subtitle: ""
+format:
+  revealjs: 
+    slide-number: true
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    css: styles.css
+    footer: <Matthew Jones, Dynamics Research Group>
+
+---
+
+## plan
+
+
+    - applications -> curve fitting/regression -> machine learning definitions -> get all to come up and draw GP -> do my own
+
+    -   explain parametric vs non-parametric intuitevely (second definition of Gaussian process)
+
+    -   into gaussian distribution, 2d correlation, 5 d correlation, 50 d correlation, link to their plot - third definition of Gaussian process?
+
+    -   how do we define GP? mean and cov
+
+    -  mean 0, look at different cov functions, see how functions change
+    
+    -  second level of change - hyperparameters
+    
+    - optimisation
+
+    - summary of my first GP
+
+    - problems with GPs & advanced approaches
+
+
+## Why do we care?
+
+- Interested in monitoring an aircraft wing, but only have access to data where we have sensors
+
+- Sensors == cost 
+
+::: {layout-ncol=2}
+
+![](figs/aircraft%20wing/hawk.jpg)
+
+![](figs/aircraft%20wing/hawk-sens.jpg)
+
+:::
+
+
+## Why do we care?
+
+- Interested in monitoring an aircraft wing, but can only get data where we have sensors
+
+- Sensors = cost 
+
+- Use a Gaussian process to act as a "virtual sensor"
+
+![](figs/aircraft%20wing/wing.png)
+
+
+## Why do we care?
+
+- Interested in monitoring an aircraft wing, but can only get data where we have sensors
+
+- Sensors = cost 
+
+- Use a Gaussian process to act as a "virtual sensor"
+
+![](figs/aircraft%20wing/wing-vs.png)
+
+## Why do we care?
+
+- We can extend virtual sensing to using one type of measurement to predict another
+
+- e.g predicting a wind turbine's power output from measured wind speed 
+
+
+
+## Why do we care?
+
+:::: {.columns}
+
+::: {.column width="40%"}
+- We can extend virtual sensing to using one type of measurement to predict another
+
+- e.g predicting a wind turbine's power output from measured wind speed 
+:::
+
+::: {.column width="60%"}
+![](figs/power-curve.png)
+:::
+
+::::
+
+
+

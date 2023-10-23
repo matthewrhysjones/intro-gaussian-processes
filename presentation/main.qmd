@@ -106,7 +106,6 @@ format:
 - In machine learning & statistics, we call this a regression problem
 
 
-
 ## title
 
 - All revolve around learning a map from $X \rightarrow \mathbf{y}$
@@ -123,14 +122,117 @@ format:
 
 - generate toy data 
 
+## title
+
+- fit GP to toy data & compare (samples and mean & variance plot)
 
 
+## So how we GPs work?
+
+- You have a friend that asks you how your beer tastes..
+
+## So how we GPs work?
+
+- You have a friend that asks you how your beer tastes..
+
+- recipe picture 
+
+## So how we GPs work?
+
+- You have a friend that asks you how your beer tastes..
+
+- recipe picture (lhs)
+
+- beers based on similarity to others 
+
+## The intersection between beer tasting and GPs
+
+- GPs work in the same way! Use similarity between data points to tell us about others
+
+## The intersection between beer tasting and GPs
+
+- GPs work in the same way! Use similarity between data points to tell us about others
+
+- Basis of this notion is treating each data point as a Gaussian distribution
+
+- This mean we have some mean value, as well as some uncertainty on observed data 
 
 
+## The Gaussian distribution 
 
-## equations
+```{python}
 
-$5x = \frac{2}{5}$ 
+from scipy.stats import norm
+import matplotlib.pyplot as plt
+import numpy as np 
+
+#initialize a normal distribution with frozen in mean=-1, std. dev.= 1
+norm1 = norm(loc = 0., scale = 1.0)
+
+x = np.arange(-10, 10, .1)
+
+#plot the pdfs of these normal distributions 
+plt.plot(x, norm1.pdf(x))
+
+```
+
+## THe Gaussian distribution
+
+```{python}
+norm2 = norm(loc = 0., scale = 0.5)
+norm3 = norm(loc = 2, scale = 2.0)
+
+plt.plot(x, norm2.pdf(x), x, norm3.pdf(x))
+
+```
+
+## Measuring similarity between the data
+
+- 2D covariance, no correlation, high correlation
+
+## Beyond 2 data points
+
+- revert to plotting indices (5 d maybe?)
+
+## Beyond 2 data points
+
+- show that as we add more dimensions, starts to look like GP functions we fit earlier 
+
+- **Second definition of a Gaussian process: **
+
+## The core ingredients of a GP
+
+- To construct a Gaussian process model, we need to define both a mean and a covariance function 
+
+- Mean can be viewed as an offset of predictions
+
+- Covariance function controls how "closeness" of data points relates to their function value 
+
+## The covariance function
+
+- Will assume a zero mean function
+
+- Many different types of kernel functions!
+
+- Loosely, they govern the type of functions that the GP will attempt to model 
+
+## Some examples 
+
+- SE, Matern, periodic - give example code 
+
+- Nonstationary vs stationary
+
+## Hyperparameters 
+
+- For a given kernel, there will be some hyperparameters that needed to be selected 
+
+- For squared expoential kernel, these are the signal variance and lengthscale 
+
+- visualise changes both of these 
+
+## How do we set hyperparameters?
+
+- Generally won't know what these values should be...
 
 
 

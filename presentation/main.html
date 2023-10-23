@@ -438,9 +438,113 @@
 <li>generate toy data</li>
 </ul>
 </section>
-<section id="equations" class="slide level2">
-<h2>equations</h2>
-<p><span class="math inline">\(5x = \frac{2}{5}\)</span></p>
+<section id="title-3" class="slide level2">
+<h2>title</h2>
+<ul>
+<li>fit GP to toy data &amp; compare (samples and mean &amp; variance plot)</li>
+</ul>
+</section>
+<section id="so-how-we-gps-work" class="slide level2">
+<h2>So how we GPs work?</h2>
+<ul>
+<li>You have a friend that asks you how your beer tastes..</li>
+</ul>
+</section>
+<section id="so-how-we-gps-work-1" class="slide level2">
+<h2>So how we GPs work?</h2>
+<ul>
+<li><p>You have a friend that asks you how your beer tastes..</p></li>
+<li><p>recipe picture</p></li>
+</ul>
+</section>
+<section id="so-how-we-gps-work-2" class="slide level2">
+<h2>So how we GPs work?</h2>
+<ul>
+<li><p>You have a friend that asks you how your beer tastes..</p></li>
+<li><p>recipe picture (lhs)</p></li>
+<li><p>beers based on similarity to others</p></li>
+</ul>
+</section>
+<section id="the-intersection-between-beer-tasting-and-gps" class="slide level2">
+<h2>The intersection between beer tasting and GPs</h2>
+<ul>
+<li>GPs work in the same way! Use similarity between data points to tell us about others</li>
+</ul>
+</section>
+<section id="the-intersection-between-beer-tasting-and-gps-1" class="slide level2">
+<h2>The intersection between beer tasting and GPs</h2>
+<ul>
+<li><p>GPs work in the same way! Use similarity between data points to tell us about others</p></li>
+<li><p>Basis of this notion is treating each data point as a Gaussian distribution</p></li>
+<li><p>This mean we have some mean value, as well as some uncertainty on observed data</p></li>
+</ul>
+</section>
+<section id="the-gaussian-distribution" class="slide level2">
+<h2>The Gaussian distribution</h2>
+<ul>
+<li>2 gaussian pdfs, with different variance</li>
+</ul>
+<div class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<p><img data-src="main_files/figure-revealjs/cell-2-output-1.png" width="794" height="411"></p>
+</div>
+</div>
+</section>
+<section id="measuring-similarity-between-the-data" class="slide level2">
+<h2>Measuring similarity between the data</h2>
+<ul>
+<li>2D covariance, no correlation, high correlation</li>
+</ul>
+</section>
+<section id="beyond-2-data-points" class="slide level2">
+<h2>Beyond 2 data points</h2>
+<ul>
+<li>revert to plotting indices (5 d maybe?)</li>
+</ul>
+</section>
+<section id="beyond-2-data-points-1" class="slide level2">
+<h2>Beyond 2 data points</h2>
+<ul>
+<li><p>show that as we add more dimensions, starts to look like GP functions we fit earlier</p></li>
+<li><p><strong>Second definition of a Gaussian process: </strong></p></li>
+</ul>
+</section>
+<section id="the-core-ingredients-of-a-gp" class="slide level2">
+<h2>The core ingredients of a GP</h2>
+<ul>
+<li><p>To construct a Gaussian process model, we need to define both a mean and a covariance function</p></li>
+<li><p>Mean can be viewed as an offset of predictions</p></li>
+<li><p>Covariance function controls how “closeness” of data points relates to their function value</p></li>
+</ul>
+</section>
+<section id="the-covariance-function" class="slide level2">
+<h2>The covariance function</h2>
+<ul>
+<li><p>Will assume a zero mean function</p></li>
+<li><p>Many different types of kernel functions!</p></li>
+<li><p>Loosely, they govern the type of functions that the GP will attempt to model</p></li>
+</ul>
+</section>
+<section id="some-examples" class="slide level2">
+<h2>Some examples</h2>
+<ul>
+<li><p>SE, Matern, periodic - give example code</p></li>
+<li><p>Nonstationary vs stationary</p></li>
+</ul>
+</section>
+<section id="hyperparameters" class="slide level2">
+<h2>Hyperparameters</h2>
+<ul>
+<li><p>For a given kernel, there will be some hyperparameters that needed to be selected</p></li>
+<li><p>For squared expoential kernel, these are the signal variance and lengthscale</p></li>
+<li><p>visualise changes both of these</p></li>
+</ul>
+</section>
+<section id="how-do-we-set-hyperparameters" class="slide level2">
+<h2>How do we set hyperparameters?</h2>
+<ul>
+<li>Generally won’t know what these values should be…</li>
+</ul>
 <div class="footer footer-default">
 <p>&lt;Matthew Jones, Dynamics Research Group&gt;</p>
 </div>

@@ -1,14 +1,13 @@
 import numpy as np
 
-class gpr(GP):
+class gpr(train_data,target_data,kernel,hyps):
 
-    def optimise():
 
-    return opt_gp
 
-    def predict(self, xtest):
+    def train():
+        
 
-    return f_star
+    def predict():
 
 
 

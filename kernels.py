@@ -1,22 +1,85 @@
 import numpy as np 
+from scipy.spatial.distance import cdist
 
+class BaseKernel:
 
-class kernels(x1,x2,hyps):
+    def __init__(self,xtrain,xtest,hyps):
 
-    def __init__(hyps):
+        self.hyps = hyps
+        self.xtrain = xtrain
+        self.xtest = xtest
+
+        self.pairwise_xx = cdist(xtrain,xtrain)
+        self.pairwise_xt = cdist(xtrain,xtest)
+        self.pairwise_tt = cdist(xtest,xtest)
     
-    def squared_exponential(self):
+class SquaredExponential(BaseKernel):
 
-        sf2 = hyps[0]
-        l = hyps[1] 
+    def k(self, d):
 
-    def matern12(self):
+        sf2 = self.hyps[0]
+        l = self.hyps[1]
 
-        sf2 = hyps[0]
-        l = hyps[1]
+        return sf2 * np.exp(-d**2 / (2 * l**2))
 
-    def matern32(self):
+    def compute_kernel(self):
 
-        sf2 = hyps[0]
-        l = hyps[1]
+        kxx = self.k(self.pairwise_xx)
+        kxt = self.k(self.pairwise_xt)
+        ktt = self.k(self.pairwise_tt)
+
+        return kxx, kxt, ktt
+        
+class Matern12(BaseKernel):
+        
+    def k(self,d):
+
+        sf2 = self.hyps[0]
+        l = self.hyps[1]
+
+        return sf2 * np.exp(-d/l)
+    
+    def compute_kernel(self):
+
+        kxx = self.k(self.pairwise_xx)
+        kxt = self.k(self.pairwise_xt)
+        ktt = self.k(self.pairwise_tt)
+
+        return kxx, kxt, ktt
+
+class Matern32(BaseKernel):
+        
+    def k(self,d):
+
+        sf2 = self.hyps[0]
+        l = self.hyps[1]
+
+        return sf2 * (1+(np.sqrt(3)*d/l)) * np.exp(-np.sqrt(3)*d/l)
+    
+    def compute_kernel(self):
+
+        kxx = self.k(self.pairwise_xx)
+        kxt = self.k(self.pairwise_xt)
+        ktt = self.k(self.pairwise_tt)      
+
+        return kxx, kxt, ktt
+
+class Periodic(BaseKernel):
+
+    def k(self,d):
+
+        sf2 = self.hyps[0]
+        l = self.hyps[1]
+        p = self.hyps[2]
+
+        return  sf2 * np.exp(-2/l**2 * np.sin(np.pi*np.abs(d)/p)**2)
+    
+    def compute_kernel(self):
+
+        kxx = self.k(self.pairwise_xx)
+        kxt = self.k(self.pairwise_xt)
+        ktt = self.k(self.pairwise_tt)
+
+        return kxx, kxt, ktt
+
 

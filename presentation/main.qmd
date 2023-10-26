@@ -215,10 +215,6 @@ plt.legend();
 
 :::
 
-## A second definition
-
-Gaussian processes are a flexible tool for performing nonliner regression in a non-parametric, Bayesian manner
-
 ## The intersection between beer tasting and GPs
 
 - GPs work in the same way! Use similarity between data points to tell us about others
@@ -230,6 +226,10 @@ Gaussian processes are a flexible tool for performing nonliner regression in a n
 - Basis of this notion is treating each data point as a Gaussian distribution
 
 - This mean we have some mean value, as well as some uncertainty on observed data 
+
+## A second definition
+
+Gaussian processes are a flexible tool for performing nonliner regression in a non-parametric, Bayesian manner
 
 
 ## The Gaussian distribution 
@@ -788,13 +788,14 @@ plt.legend();
 
 ```
 
-## Draw backs of GPs
+## Drawbacks
 
 .. and there are several despite what you might think I believe after the last hour..
 
 - Training & memory requirements - scale very badly as we increase number of training points
 - Selecting a covariance function
 - Hyperparameter learning can be challenging; local optima, for more complex kernel structures & if we try and recover full distributions over the parameters 
+- We've only considered univariate (1D output) GPs here 
 
 ## Concluding remarks
 

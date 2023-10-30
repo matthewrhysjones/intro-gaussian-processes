@@ -30,4 +30,4 @@ kernels.Matern12
 
 etc
 
-You can run all the code in the presentation from **presentation-code.py**, just make sure that you have the necessary libraries installed in your environment specified in **requirements.txt**, but you can see all the packages I had installed from the first code block in *resentation-code.py. I used python 3.11.3, so can't guarantee execution on other versions, but let me know if you have any issues.  
+You can run all the code in the presentation from **presentation-code.py**, just make sure that you have the necessary libraries installed in your environment specified in **requirements.txt**, but you can see all the packages I had installed from the first code block in presentation-code.py. I used python 3.11.3, so can't guarantee execution on other versions, but let me know if you have any issues.  

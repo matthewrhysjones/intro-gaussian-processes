@@ -22,9 +22,10 @@ The periodic kernel also has a hyperparameter that controls the period of the ke
 
 hyps = [sf2, l , p, sn2]
 
-**models.py** contains the loss,train and prediction function. For inputting the kernel, it should be specified as
+**models.py** contains the loss, train and prediction function. The kernel should be passed to these functions as follows
 
 kernels.SquaredExponential
+</br>
 kernels.Matern12
 
 etc
